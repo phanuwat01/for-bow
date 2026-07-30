@@ -15,3 +15,7 @@ function checkPassword() {
         document.getElementById("error").innerText = "รหัสผ่านไม่ถูกต้อง 💔";
     }
 }
+document.getElementById("start-btn").addEventListener("click", function () {
+    document.getElementById("welcome-screen").style.display = "none";
+    document.getElementById("story-screen").style.display = "block";
+});
