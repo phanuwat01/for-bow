@@ -67,3 +67,50 @@ button:hover{
     color:#ff3b6b;
     margin-top:15px;
 }
+#story-screen{
+    display:none;
+    width:90%;
+    max-width:700px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(12px);
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 10px 35px rgba(0,0,0,.12);
+}
+
+#progress{
+    margin-bottom:25px;
+}
+
+#dots{
+    font-size:22px;
+    color:#ff6fa8;
+    letter-spacing:8px;
+}
+
+#page-number{
+    margin-top:10px;
+    color:#777;
+    font-size:15px;
+}
+
+#story-text{
+    min-height:220px;
+    font-size:22px;
+    line-height:2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    white-space:pre-line;
+    margin-bottom:30px;
+}
+
+#navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+}
+
+#navigation button{
+    flex:1;
+}
