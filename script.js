@@ -95,6 +95,7 @@ const pages = [
 
 เวฟรักโบว์นะ 💝`
 ];let currentPage = 0;
+let typing = false;
 window.onload = function () {
     setTimeout(() => {
         document.getElementById("loading-screen").style.display = "none";
@@ -115,12 +116,18 @@ function checkPassword() {
 document.getElementById("start-btn").addEventListener("click", function () {
     document.getElementById("welcome-screen").style.display = "none";
     document.getElementById("story-screen").style.display = "block";
-updatePage();
+    currentPage = 0;
+    updatePage();
 });
-function updatePage() {
+async function updatePage() {
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
-    document.getElementById("story-text").innerText = pages[currentPage];
+nextBtn.style.display = "none"; 
+const story = document.getElementById("story-text");
+
+story.innerHTML = "";
+typing = true;
+const lines = pages[currentPage].split("\n");    
 
     document.getElementById("page-number").innerText =
         `${currentPage + 1} / ${pages.length}`;
@@ -132,20 +139,40 @@ const nextBtn = document.getElementById("next-btn");
     }
 
     document.getElementById("dots").innerText = dots.join(" ");
-prevBtn.style.display = currentPage === 0 ? "none" : "inline-block";
+for (const line of lines) {
+
+    const p = document.createElement("p");
+
+    p.style.opacity = "0";
+
+    p.style.transition = "0.5s";
+
+    p.innerHTML = line === "" ? "&nbsp;" : line;
+
+    story.appendChild(p);
+
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    p.style.opacity = "1";
+}
+typing = false;
+
+    prevBtn.style.display = currentPage === 0 ? "none" : "inline-block";
 
 nextBtn.style.display =
     currentPage === pages.length - 1 ? "none" : "inline-block";
 }
 
 document.getElementById("next-btn").addEventListener("click", function () {
-    if (currentPage < pages.length - 1) {
+if (typing) return;
+if (currentPage < pages.length - 1) {
         currentPage++;
         updatePage();
     }
 });
 
 document.getElementById("prev-btn").addEventListener("click", function () {
+    if (typing) return;
     if (currentPage > 0) {
         currentPage--;
         updatePage();
