@@ -118,7 +118,8 @@ document.getElementById("start-btn").addEventListener("click", function () {
 updatePage();
 });
 function updatePage() {
-
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
     document.getElementById("story-text").innerText = pages[currentPage];
 
     document.getElementById("page-number").innerText =
@@ -131,6 +132,10 @@ function updatePage() {
     }
 
     document.getElementById("dots").innerText = dots.join(" ");
+prevBtn.style.display = currentPage === 0 ? "none" : "inline-block";
+
+nextBtn.style.display =
+    currentPage === pages.length - 1 ? "none" : "inline-block";
 }
 
 document.getElementById("next-btn").addEventListener("click", function () {
