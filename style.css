@@ -93,18 +93,22 @@ button:hover{
     color:#777;
     font-size:15px;
 }
-
 #story-text{
     min-height:220px;
     font-size:22px;
     line-height:2;
+    margin-bottom:30px;
+
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    white-space:pre-line;
-    margin-bottom:30px;
 }
-
+#story-text p{
+    margin:8px 0;
+    text-align:center;
+    width:100%;
+}
 #navigation{
     display:flex;
     justify-content:space-between;
