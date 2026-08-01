@@ -122,11 +122,22 @@ document.getElementById("start-btn").addEventListener("click", function () {
 async function updatePage() {
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
-nextBtn.style.display = "none"; 
+ 
 const story = document.getElementById("story-text");
-
+const storyImage = document.getElementById("story-image");
 story.innerHTML = "";
-typing = true;
+if (currentPage === pages.length - 1) {
+storyImage.style.display = "block";
+storyImage.style.opacity = "0";
+
+setTimeout(() => {
+    storyImage.style.opacity = "1";
+}, 100);
+} else {
+    storyImage.style.display = "none";
+    storyImage.style.opacity = "0";
+}
+    typing = true;
 const lines = pages[currentPage].split("\n");    
 
     document.getElementById("page-number").innerText =
