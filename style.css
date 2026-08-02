@@ -123,7 +123,6 @@ button:hover{
     margin-bottom:25px;
 }
 
-}
 #story-image img{
     width:220px;
     max-width:100%;
@@ -131,7 +130,18 @@ button:hover{
     box-shadow:0 8px 25px rgba(0,0,0,.15);
     border:4px solid white;
 }
-.fade{
-    opacity:0;
-    transition:opacity .4s ease;
-}    
+.page-animate{
+    animation: pageFade .45s ease;
+}
+
+@keyframes pageFade{
+    0%{
+        opacity:0;
+        transform:translateY(12px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
