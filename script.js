@@ -125,6 +125,7 @@ const nextBtn = document.getElementById("next-btn");
  
 const story = document.getElementById("story-text");
 const storyImage = document.getElementById("story-image");
+
 story.innerHTML = "";
 if (currentPage === pages.length - 1) {
 storyImage.style.display = "block";
@@ -166,6 +167,7 @@ for (const line of lines) {
 
     p.style.opacity = "1";
 }
+
 typing = false;
 
     prevBtn.style.display = currentPage === 0 ? "none" : "inline-block";
