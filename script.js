@@ -125,6 +125,10 @@ const nextBtn = document.getElementById("next-btn");
  
 const story = document.getElementById("story-text");
 const storyImage = document.getElementById("story-image");
+const screen = document.getElementById("story-screen");
+screen.classList.remove("page-animate");
+void screen.offsetWidth;
+screen.classList.add("page-animate");   
 
 story.innerHTML = "";
 if (currentPage === pages.length - 1) {
