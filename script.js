@@ -113,6 +113,12 @@ function checkPassword() {
         document.getElementById("error").innerText = "รหัสผ่านไม่ถูกต้อง 💔";
     }
 }
+document.getElementById("music-btn").addEventListener("click", function () {
+    window.open(
+        "https://open.spotify.com/track/7pfsP79OT96JAOraUuXmnt?si=RM2G6po8QMqdi_CbnSmVkQ&utm_source=copy-link",
+        "_blank"
+    );
+});
 document.getElementById("start-btn").addEventListener("click", function () {
     document.getElementById("welcome-screen").style.display = "none";
     document.getElementById("story-screen").style.display = "block";
