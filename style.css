@@ -131,7 +131,7 @@ button:hover{
     border:4px solid white;
 }
 .page-animate{
-    animation: pageFade .7s ease;
+    animation: pageFade .9s ease;
 }
 
 @keyframes pageFade{
