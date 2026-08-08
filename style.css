@@ -145,3 +145,6 @@ button:hover{
         transform:translateY(0);
     }
 }
+#finish-btn {
+    margin-top: 20px;
+}
