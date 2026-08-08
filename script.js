@@ -184,12 +184,13 @@ typing = false;
 
 nextBtn.style.display =
     currentPage === pages.length - 1 ? "none" : "inline-block";
-}
 const finishBtn = document.getElementById("finish-btn");
-
 finishBtn.style.display =
     currentPage === pages.length - 1 ? "inline-block" : "none";
-document.getElementById("next-btn").addEventListener("click", function () {
+
+    
+}
+    document.getElementById("next-btn").addEventListener("click", function () {
 if (typing) return;
 if (currentPage < pages.length - 1) {
         currentPage++;
