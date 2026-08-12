@@ -137,6 +137,7 @@ void screen.offsetWidth;
 screen.classList.add("page-animate");   
 
 story.innerHTML = "";
+const finishBtn = document.getElementById("finish-btn");
 if (currentPage === pages.length - 1) {
 storyImage.style.display = "block";
 storyImage.style.opacity = "0";
@@ -149,6 +150,11 @@ setTimeout(() => {
     storyImage.style.opacity = "0";
 }
     typing = true;
+    prevBtn.style.display = "none";
+
+nextBtn.style.display = "none";
+
+finishBtn.style.display = "none";
 const lines = pages[currentPage].split("\n");    
 
     document.getElementById("page-number").innerText =
@@ -184,7 +190,7 @@ typing = false;
 
 nextBtn.style.display =
     currentPage === pages.length - 1 ? "none" : "inline-block";
-const finishBtn = document.getElementById("finish-btn");
+
 finishBtn.style.display =
     currentPage === pages.length - 1 ? "inline-block" : "none";
 
