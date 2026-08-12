@@ -197,7 +197,10 @@ if (currentPage < pages.length - 1) {
         updatePage();
     }
 });
-
+document.getElementById("finish-btn").addEventListener("click", function () {
+    document.getElementById("story-screen").style.display = "none";
+    document.getElementById("finish-screen").style.display = "flex";
+});
 document.getElementById("prev-btn").addEventListener("click", function () {
     if (typing) return;
     if (currentPage > 0) {
